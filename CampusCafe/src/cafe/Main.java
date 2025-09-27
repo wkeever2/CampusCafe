@@ -20,8 +20,7 @@ public class Main {
 			String selection = sc.nextLine();
 			if(selection.toLowerCase().equals("done"))
 			{
-				stillOrdering = false; //Probably not necessary but its fun!
-				break;
+				stillOrdering = false;
 			}
 			else
 			{
@@ -66,6 +65,8 @@ public class Main {
 				System.out.println("How many do you want?");
 				int number = sc.nextInt();
 				selectedItem.setNumber(number);
+				//Eat the extra line bug here:
+				sc.nextLine();
 				
 				//Then add the item to the order:
 				userOrder.addItem(selectedItem);

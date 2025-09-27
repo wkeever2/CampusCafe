@@ -38,12 +38,12 @@ public class Order
 
 		for(Product item : cartItems)
 		{
-			str += item.getNumber() + "x " + item.getName() + "(" + item.getID() + ") $" + item.price() + "\n";
+			str += item.getNumber() + "x " + item.getName() + " (" + item.getID() + String.format(") $%.2f\n", item.price());
 		}
 		
-		str += "Subtotal: " + subTotal + "\n";
-		str += "Tax: " + tax + "\n";
-		str += "Total: " + total;
+		str += String.format("Subtotal: $%.2f\n", subTotal);
+		str += String.format("Tax: $%.2f\n", tax);
+		str += String.format("Total: $%.2f\n", total);
 		return str;
 	}
 	
